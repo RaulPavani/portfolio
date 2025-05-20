@@ -11,7 +11,6 @@
     }
 
     body {
-      cursor: url("https://img.itch.zone/aW1hZ2UyL3VzZXIvMzk4MjIvODg5MzQ5LnBuZw==/35x35%23/zbPcOp.png"), auto;
       text-shadow: 1px 1px #FF00FF;
       font-family: 'Cabin Sketch', monospace;
       background-color: black;
@@ -21,7 +20,6 @@
     }
 
     a {
-      cursor: url("https://img.itch.zone/aW1hZ2UyL3VzZXIvMzk4MjIvODg5MzQ5LnBuZw==/35x35%23/zbPcOp.png"), auto;
       font-size: 25px;
       color: #ffffff;
       text-decoration: none;
@@ -46,8 +44,8 @@
 
     section {
       padding: 30px;
-      width: 900px;
-      margin: 60px 0 60px 10%;
+      max-width: 900px;
+      margin: 60px auto;
       background-color: black;
       outline: 5px solid #0000AE;
       box-shadow: 0px 0px 30px black;
@@ -55,43 +53,6 @@
       font-size: 20px;
       color: white;
       transform: rotate(var(--section-angle, 0deg));
-      position: relative;
-      transition: all 0.3s ease;
-    }
-
-    .collapsed h2,
-    .collapsed p,
-    .collapsed ul,
-    .collapsed div:not(.window-controls):not(.window-toggle) {
-      display: none;
-    }
-
-    .collapsed::before {
-      content: attr(data-title);
-      display: block;
-      text-align: center;
-      font-size: 1.5em;
-      padding-top: 8px;
-      text-shadow: 1px 1px #FF00FF;
-    }
-
-    .window-controls {
-      position: absolute;
-      top: 8px;
-      right: 8px;
-    }
-
-    .window-toggle {
-      width: 16px;
-      height: 16px;
-      display: inline-block;
-      border-radius: 50%;
-      background-color: #FF00FF;
-      cursor: pointer;
-    }
-
-    .collapsed .window-toggle {
-      background-color: #00FF00;
     }
 
     #curriculo {
@@ -122,26 +83,10 @@
       padding: 15px;
       cursor: pointer;
       transition: transform 0.2s;
-      position: relative;
     }
 
     .project:hover {
       transform: scale(1.02);
-    }
-
-    .project-toggle {
-      position: absolute;
-      top: 8px;
-      right: 8px;
-      width: 16px;
-      height: 16px;
-      border-radius: 50%;
-      background-color: #FF00FF;
-      cursor: pointer;
-    }
-
-    .collapsed .project-toggle {
-      background-color: #00FF00;
     }
 
     .project-details {
@@ -182,16 +127,9 @@
     }
   </style>
   <script>
-    function toggleSection(button) {
-      const section = button.closest('section');
-      section.classList.toggle('collapsed');
-    }
-
-    function toggleProject(button) {
-      const project = button.closest('.project');
-      const details = project.querySelector('.project-details');
-      project.classList.toggle('collapsed');
-      details.style.display = project.classList.contains('collapsed') ? 'none' : 'block';
+    function toggleDetails(id) {
+      const details = document.getElementById(id);
+      details.style.display = details.style.display === 'block' ? 'none' : 'block';
     }
   </script>
 </head>
@@ -206,26 +144,26 @@
     <a href="#projetos">Projetos</a>
   </nav>
 
-  <section id="curriculo" data-title="Sobre Mim">
-    <div class="window-controls">
-      <span class="window-toggle" onclick="toggleSection(this)"></span>
-    </div>
+  <section id="curriculo">
     <h2>Sobre Mim</h2>
     <p>Sou graduado em Jogos Digitais pela FATEC Americana, atualmente mestrando na Unicamp com foco em gamificação e suas aplicações no ensino. Atuo como desenvolvedor de jogos e também como docente nas áreas de Computação e Jogos Digitais.</p>
 
     <h2>Experiência Profissional</h2>
     <ul>
-      <li><strong>Árvore Games</strong> – Desenvolvedor VR | Fase de publicação</li>
-      <li><strong>Hydra Games</strong> – Desenvolvedor | Foco em gambling, metodologias de projeto</li>
-      <li><strong>ISGAME</strong> – Desenvolvedor | Jogos mobile para idosos, foco cognitivo</li>
-      <li><strong>Ilex Games</strong> – Gameplay Programmer | Jogos indie para Steam</li>
-      <li><strong>Docente</strong> – Ciências da Computação e Jogos Digitais (FAM)</li>
+      <li><strong>Árvore Games</strong> – Gameplay Developer | Unity | VR - 2025 - até o momento</li>
+      <li><strong>Docente</strong> – Ciências da Computação e Jogos Digitais (FAM) - 2024 - até o momento</li>
+      <li><strong>Hydra Games</strong> – Gameplay Developer | Unity | Gambling - 2022 - 2024</li>
+      <li><strong>Ilex Games</strong> – Desenvolvedor Unity | Unity  - 2020 - 2022</li>
+      <li><strong>ISGAME</strong> – Desenvolvedor Unity | Unity | Mobile - 2020 - 2022</li>
+      <li><strong>IBM</strong> – Desenvolvedor SAP | ABAP - 2018 - 2020</li>
     </ul>
 
     <h2>Educação</h2>
     <ul>
-      <li><strong>Mestrado</strong> – Unicamp (Gamificação no ensino) – em andamento</li>
-      <li><strong>Graduação</strong> – Jogos Digitais – FATEC Americana</li>
+      <li><strong>Mestrado</strong> – Mestrado em Tecnologia com enfase em Gamificação - Unicamp – em andamento</li>
+      <li><strong>Especialização </strong> – Inteligência Artificial e Aprendizado de Maquina – PUC - conclusão 2025</li>
+      <li><strong>Especialização </strong> – Álgebra Linear e Geometria Analítica – Unyleya - conclusão 2022</li>
+      <li><strong>Graduação</strong> – Jogos Digitais – FATEC Americana - conclusão 2019</li>
     </ul>
 
     <h2>Links</h2>
@@ -235,51 +173,46 @@
     </p>
   </section>
 
-  <section id="projetos" data-title="Projetos">
-    <div class="window-controls">
-      <span class="window-toggle" onclick="toggleSection(this)"></span>
-    </div>
+  <section id="projetos">
     <h2>Projetos</h2>
 
-    <div class="project">
-      <span class="project-toggle" onclick="toggleProject(this)"></span>
-      <div class="project-title">ISGAME</div>
-      <div class="project-role">Desenvolvedor | Jogo como serviço para mobile, foco em habilidades cognitivas</div>
-      <div class="project-details" id="details-isgame">
-        <p><strong>Projeto:</strong> Jogo para treino cognitivo voltado à terceira idade.</p>
-        <iframe src="https://www.youtube.com/embed/VIDEO_ID1" allowfullscreen></iframe>
-      </div>
-    </div>
-
-    <div class="project">
-      <span class="project-toggle" onclick="toggleProject(this)"></span>
-      <div class="project-title">Hydra Games</div>
-      <div class="project-role">Desenvolvedor | Projetos de gambling, foco em desenvolvimento e metodologias</div>
-      <div class="project-details" id="details-hydra">
-        <p><strong>Projeto:</strong> Jogos com foco em performance e monetização.</p>
-        <iframe src="https://www.youtube.com/embed/VIDEO_ID2" allowfullscreen></iframe>
-      </div>
-    </div>
-
-    <div class="project">
-      <span class="project-toggle" onclick="toggleProject(this)"></span>
+    <div class="project" onclick="toggleDetails('details-arvore')">
       <div class="project-title">Árvore Games</div>
       <div class="project-role">Desenvolvedor VR | Projeto em fase de publicação</div>
       <div class="project-details" id="details-arvore">
         <p><strong>Projeto:</strong> Experiências imersivas em realidade virtual.</p>
-        <iframe src="https://www.youtube.com/embed/VIDEO_ID3" allowfullscreen></iframe>
+        <iframe src="https://arvore.io/"></iframe>
       </div>
     </div>
 
-    <div class="project">
-      <span class="project-toggle" onclick="toggleProject(this)"></span>
+    <div class="project" onclick="toggleDetails('details-hydra')">
+      <div class="project-title">Hydra Games</div>
+      <div class="project-role">Desenvolvedor | Projetos de gambling, foco em desenvolvimento e metodologias</div>
+      <div class="project-details" id="details-hydra">
+        <p><strong>Projeto:</strong> Jogos com foco em performance e monetização.</p>
+        <iframe src="https://www.youtube.com/watch?v=j-cZUO_PDGs&list=PLsiL9nG-LetJUW5F4np_ie_LUpLRfSnS1" allowfullscreen></iframe>
+      </div>
+    </div>
+
+    <div class="project" onclick="toggleDetails('details-ilex')">
       <div class="project-title">Ilex Games</div>
       <div class="project-role">Gameplay Programmer | Jogos indie para Steam</div>
       <div class="project-details" id="details-ilex">
         <p><strong>Projeto:</strong> Desenvolvimento completo e publicação de jogos independentes.</p>
-        <iframe src="https://www.youtube.com/embed/VIDEO_ID4" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/watch?v=wo0227Hd26o" allowfullscreen></iframe>
       </div>
     </div>
+
+
+    <div class="project" onclick="toggleDetails('details-isgame')">
+      <div class="project-title">ISGAME</div>
+      <div class="project-role">Desenvolvedor | Jogo como serviço para mobile, foco em habilidades cognitivas</div>
+      <div class="project-details" id="details-isgame">
+        <p><strong>Projeto:</strong> Jogo para treino cognitivo voltado à terceira idade.</p>
+        <iframe src="https://www.youtube.com/watch?v=OeU0UnG4XfY" allowfullscreen></iframe>
+      </div>
+    </div>
+    
   </section>
 
   <footer>
