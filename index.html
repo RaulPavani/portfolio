@@ -4,59 +4,126 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portfólio - Raul Pavani</title>
+  <link href="https://fonts.googleapis.com/css?family=Cabin+Sketch" rel="stylesheet">
   <style>
     body {
-      font-family: Arial, sans-serif;
+      text-shadow: 1px 1px #FF00FF;
+      font-family: 'Cabin Sketch', monospace;
+      background-color: black;
+      animation: colorloop 5s infinite;
       margin: 0;
       padding: 0;
-      background-color: #f9f9f9;
-      color: #333;
     }
-    header {
-      background-color: #222;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
-    nav {
-      background: #444;
-      padding: 10px;
-      text-align: center;
-    }
-    nav a {
-      color: white;
-      margin: 0 15px;
+
+    a {
+      font-size: 25px;
+      color: #ffffff;
       text-decoration: none;
-      font-weight: bold;
     }
+
+    header {
+      text-align: center;
+      padding: 40px;
+      animation: rotation 0.3s ease-out alternate infinite;
+      background-color: #000;
+    }
+
+    nav {
+      text-align: center;
+      padding: 15px;
+      background: #000;
+      animation: colorloop_blck 2s infinite;
+    }
+
+    nav a {
+      margin: 0 20px;
+    }
+
     section {
       padding: 30px;
       max-width: 900px;
       margin: auto;
+      background-color: black;
+      outline: 5px solid #0000AE;
+      box-shadow: 30px 30px 0px black;
+      border: 5px solid white;
+      font-size: 20px;
+      color: white;
     }
+
     h2 {
-      border-bottom: 2px solid #ccc;
+      border-bottom: 2px dashed white;
       padding-bottom: 10px;
     }
+
     .project {
-      margin-bottom: 20px;
+      animation: rotation 0.6s ease-out alternate infinite;
+      background-color: black;
+      border: 2px solid #FF00FF;
+      margin-bottom: 15px;
+      padding: 15px;
+      cursor: pointer;
     }
-    .project-title {
-      font-size: 1.2em;
-      font-weight: bold;
+
+    .project:hover {
+      animation: floating 1.5s ease-in-out infinite;
     }
-    .project-role {
-      font-style: italic;
-      color: #555;
+
+    .project-details {
+      display: none;
+      margin-top: 10px;
+      padding: 10px;
+      background-color: #111;
+      border: 1px dashed #FF99FF;
     }
+
+    .project-details iframe {
+      width: 100%;
+      height: 315px;
+      margin-top: 10px;
+      border: none;
+    }
+
     footer {
-      background-color: #222;
-      color: white;
       text-align: center;
+      background-color: black;
+      color: white;
       padding: 20px;
-      margin-top: 40px;
+      animation: rotation 0.2s ease-out alternate infinite;
+    }
+
+    @keyframes colorloop {
+      0% { background-color: #FF00FF; }
+      20% { background-color: #FF99FF; }
+      40% { background-color: #CC00FF; }
+      60% { background-color: #CC99FF; }
+      80% { background-color: #9900FF; }
+      100% { background-color: #FF00FF; }
+    }
+
+    @keyframes colorloop_blck {
+      0% { background-color: black; }
+      50% { background-color: #000066; }
+      100% { background-color: black; }
+    }
+
+    @keyframes rotation {
+      0% { transform: rotate(-0.7deg); }
+      100% { transform: rotate(0.7deg); }
+    }
+
+    @keyframes floating {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0px); }
     }
   </style>
+  <script>
+    function toggleDetails(id) {
+      const details = document.getElementById(id);
+      details.style.display = details.style.display === 'block' ? 'none' : 'block';
+    }
+  </script>
 </head>
 <body>
   <header>
@@ -78,7 +145,7 @@
       <li><strong>Árvore Games</strong> – Desenvolvedor VR | Fase de publicação</li>
       <li><strong>Hydra Games</strong> – Desenvolvedor | Foco em gambling, metodologias de projeto</li>
       <li><strong>ISGAME</strong> – Desenvolvedor | Jogos mobile para idosos, foco cognitivo</li>
-      <li><strong>Ilex Games</strong> – Gameplay Programmer | Publicação de jogos indie na Steam</li>
+      <li><strong>Ilex Games</strong> – Gameplay Programmer | Jogos indie para Steam</li>
       <li><strong>Docente</strong> – Ciências da Computação e Jogos Digitais (FAM)</li>
     </ul>
 
@@ -98,24 +165,40 @@
   <section id="projetos">
     <h2>Projetos</h2>
 
-    <div class="project">
+    <div class="project" onclick="toggleDetails('details-isgame')">
       <div class="project-title">ISGAME</div>
       <div class="project-role">Desenvolvedor | Jogo como serviço para mobile, foco em habilidades cognitivas</div>
+      <div class="project-details" id="details-isgame">
+        <p><strong>Projeto:</strong> Jogo para treino cognitivo voltado à terceira idade.</p>
+        <iframe src="https://www.youtube.com/embed/VIDEO_ID1" allowfullscreen></iframe>
+      </div>
     </div>
 
-    <div class="project">
+    <div class="project" onclick="toggleDetails('details-hydra')">
       <div class="project-title">Hydra Games</div>
       <div class="project-role">Desenvolvedor | Projetos de gambling, foco em desenvolvimento e metodologias</div>
+      <div class="project-details" id="details-hydra">
+        <p><strong>Projeto:</strong> Jogos com foco em performance e monetização.</p>
+        <iframe src="https://www.youtube.com/embed/VIDEO_ID2" allowfullscreen></iframe>
+      </div>
     </div>
 
-    <div class="project">
+    <div class="project" onclick="toggleDetails('details-arvore')">
       <div class="project-title">Árvore Games</div>
       <div class="project-role">Desenvolvedor VR | Projeto em fase de publicação</div>
+      <div class="project-details" id="details-arvore">
+        <p><strong>Projeto:</strong> Experiências imersivas em realidade virtual.</p>
+        <iframe src="https://www.youtube.com/embed/VIDEO_ID3" allowfullscreen></iframe>
+      </div>
     </div>
 
-    <div class="project">
+    <div class="project" onclick="toggleDetails('details-ilex')">
       <div class="project-title">Ilex Games</div>
       <div class="project-role">Gameplay Programmer | Jogos indie para Steam</div>
+      <div class="project-details" id="details-ilex">
+        <p><strong>Projeto:</strong> Desenvolvimento completo e publicação de jogos independentes.</p>
+        <iframe src="https://www.youtube.com/embed/VIDEO_ID4" allowfullscreen></iframe>
+      </div>
     </div>
   </section>
 
