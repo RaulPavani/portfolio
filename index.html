@@ -11,6 +11,7 @@
     }
 
     body {
+      cursor: url("https://img.itch.zone/aW1hZ2UyL3VzZXIvMzk4MjIvODg5MzQ5LnBuZw==/35x35%23/zbPcOp.png"), auto;
       text-shadow: 1px 1px #FF00FF;
       font-family: 'Cabin Sketch', monospace;
       background-color: black;
@@ -20,6 +21,7 @@
     }
 
     a {
+      cursor: url("https://img.itch.zone/aW1hZ2UyL3VzZXIvMzk4MjIvODg5MzQ5LnBuZw==/35x35%23/zbPcOp.png"), auto;
       font-size: 25px;
       color: #ffffff;
       text-decoration: none;
@@ -44,14 +46,60 @@
 
     section {
       padding: 30px;
-      max-width: 900px;
-      margin: auto;
+      width: 900px;
+      margin: 60px 0 60px 10%;
       background-color: black;
       outline: 5px solid #0000AE;
       box-shadow: 0px 0px 30px black;
       border: 5px solid white;
       font-size: 20px;
       color: white;
+      transform: rotate(var(--section-angle, 0deg));
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    .collapsed h2,
+    .collapsed p,
+    .collapsed ul,
+    .collapsed div:not(.window-controls):not(.window-toggle) {
+      display: none;
+    }
+
+    .collapsed::before {
+      content: attr(data-title);
+      display: block;
+      text-align: center;
+      font-size: 1.5em;
+      padding-top: 8px;
+      text-shadow: 1px 1px #FF00FF;
+    }
+
+    .window-controls {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+    }
+
+    .window-toggle {
+      width: 16px;
+      height: 16px;
+      display: inline-block;
+      border-radius: 50%;
+      background-color: #FF00FF;
+      cursor: pointer;
+    }
+
+    .collapsed .window-toggle {
+      background-color: #00FF00;
+    }
+
+    #curriculo {
+      --section-angle: -1.2deg;
+    }
+
+    #projetos {
+      --section-angle: 1.3deg;
     }
 
     h2 {
@@ -74,10 +122,26 @@
       padding: 15px;
       cursor: pointer;
       transition: transform 0.2s;
+      position: relative;
     }
 
     .project:hover {
       transform: scale(1.02);
+    }
+
+    .project-toggle {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background-color: #FF00FF;
+      cursor: pointer;
+    }
+
+    .collapsed .project-toggle {
+      background-color: #00FF00;
     }
 
     .project-details {
@@ -118,9 +182,16 @@
     }
   </style>
   <script>
-    function toggleDetails(id) {
-      const details = document.getElementById(id);
-      details.style.display = details.style.display === 'block' ? 'none' : 'block';
+    function toggleSection(button) {
+      const section = button.closest('section');
+      section.classList.toggle('collapsed');
+    }
+
+    function toggleProject(button) {
+      const project = button.closest('.project');
+      const details = project.querySelector('.project-details');
+      project.classList.toggle('collapsed');
+      details.style.display = project.classList.contains('collapsed') ? 'none' : 'block';
     }
   </script>
 </head>
@@ -135,7 +206,10 @@
     <a href="#projetos">Projetos</a>
   </nav>
 
-  <section id="curriculo">
+  <section id="curriculo" data-title="Sobre Mim">
+    <div class="window-controls">
+      <span class="window-toggle" onclick="toggleSection(this)"></span>
+    </div>
     <h2>Sobre Mim</h2>
     <p>Sou graduado em Jogos Digitais pela FATEC Americana, atualmente mestrando na Unicamp com foco em gamificação e suas aplicações no ensino. Atuo como desenvolvedor de jogos e também como docente nas áreas de Computação e Jogos Digitais.</p>
 
@@ -161,10 +235,14 @@
     </p>
   </section>
 
-  <section id="projetos">
+  <section id="projetos" data-title="Projetos">
+    <div class="window-controls">
+      <span class="window-toggle" onclick="toggleSection(this)"></span>
+    </div>
     <h2>Projetos</h2>
 
-    <div class="project" onclick="toggleDetails('details-isgame')">
+    <div class="project">
+      <span class="project-toggle" onclick="toggleProject(this)"></span>
       <div class="project-title">ISGAME</div>
       <div class="project-role">Desenvolvedor | Jogo como serviço para mobile, foco em habilidades cognitivas</div>
       <div class="project-details" id="details-isgame">
@@ -173,7 +251,8 @@
       </div>
     </div>
 
-    <div class="project" onclick="toggleDetails('details-hydra')">
+    <div class="project">
+      <span class="project-toggle" onclick="toggleProject(this)"></span>
       <div class="project-title">Hydra Games</div>
       <div class="project-role">Desenvolvedor | Projetos de gambling, foco em desenvolvimento e metodologias</div>
       <div class="project-details" id="details-hydra">
@@ -182,7 +261,8 @@
       </div>
     </div>
 
-    <div class="project" onclick="toggleDetails('details-arvore')">
+    <div class="project">
+      <span class="project-toggle" onclick="toggleProject(this)"></span>
       <div class="project-title">Árvore Games</div>
       <div class="project-role">Desenvolvedor VR | Projeto em fase de publicação</div>
       <div class="project-details" id="details-arvore">
@@ -191,7 +271,8 @@
       </div>
     </div>
 
-    <div class="project" onclick="toggleDetails('details-ilex')">
+    <div class="project">
+      <span class="project-toggle" onclick="toggleProject(this)"></span>
       <div class="project-title">Ilex Games</div>
       <div class="project-role">Gameplay Programmer | Jogos indie para Steam</div>
       <div class="project-details" id="details-ilex">
