@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio - Raul Pavani</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1><strong>Raul Pavani</strong></h1>
+        <p>Gameplay Developer | Unity | C# | Lecturer | Gamification Researcher</p>
+    </header>
+
+    <!-- <nav>
+    <a href="#curriculo">Resume</a>
+    <a href="#projetos">Projects</a>
+  </nav> -->
+
+    <section id="curriculo">
+        <h2>About Me</h2>
+        <p>Game developer focused on Unity with experience in gameplay programming for multiple platforms.<br>
+            Throughout my career, I have developed from simulators to indie games, using Unity and other engines to
+            create interactive and immersive experiences. In addition, I have experience as a university lecturer,
+            teaching game development and computer science courses.
+            Currently, in addition to being a developer and lecturer, I am also a master's student researching the
+            impact of gamification on different personality types, aiming to understand how game elements can be adapted
+            to maximize engagement and learning.</p>
+
+        <h2>Professional Experience</h2>
+        <ul class="experiencia">
+            <li>
+                <span class="info"><strong>Árvore Games</strong> – Gameplay Developer | Unity | VR</span>
+                <span class="data">2025 - 20XX</span>
+            </li>
+            <li>
+                <span class="info"><strong>Faculdade de Americana</strong> – Undergraduate Lecturer | Computer
+                    Science</span>
+                <span class="data">2024 - 20XX</span>
+            </li>
+            <li>
+                <span class="info"><strong>LEXP</strong> – Unity Developer | Educational Applications</span>
+                <span class="data">2024 - 2024</span>
+            </li>
+            <li>
+                <span class="info"><strong>Hydra Games</strong> – Unity Developer | Gambling</span>
+                <span class="data">2022 - 2024</span>
+            </li>
+            <li>
+                <span class="info"><strong>Ilex Games</strong> – Unity Developer</span>
+                <span class="data">2020 - 2022</span>
+            </li>
+            <li>
+                <span class="info"><strong>ISGAME</strong> – Unity Developer | Mobile</span>
+                <span class="data">2020 - 2022</span>
+            </li>
+            <li>
+                <span class="info"><strong>IBM</strong> – SAP Developer | ABAP</span>
+                <span class="data">2018 - 2020</span>
+            </li>
+            <li>
+                <span class="info"><strong>Happy Code</strong> – Unity Instructor</span>
+                <span class="data">2016 - 2018</span>
+            </li>
+        </ul>
+
+        <h2>Education</h2>
+        <ul class="educacao">
+            <li>
+                <span class="info"><strong>Master's Degree</strong> – Technology with emphasis on Gamification -
+                    Unicamp</span>
+                <span class="data">20XX</span>
+            </li>
+            <li>
+                <span class="info"><strong>Postgraduate</strong> – Artificial Intelligence and Machine Learning –
+                    PUC</span>
+                <span class="data">2025</span>
+            </li>
+            <li>
+                <span class="info"><strong>Postgraduate</strong> – Linear Algebra and Analytical Geometry –
+                    Unyleya</span>
+                <span class="data">2022</span>
+            </li>
+            <li>
+                <span class="info"><strong>Bachelor's Degree</strong> – Digital Games – FATEC Americana</span>
+                <span class="data">2019</span>
+            </li>
+        </ul>
+
+        <h2>Links</h2>
+        <ul class="links">
+            <li>
+                <span class="info"><a href="https://www.linkedin.com/in/raul-pavani/" target="_blank">LinkedIn</a>
+                </span>
+            </li>
+            <li>
+                <span class="info"><a href="https://github.com/RaulPavani/" target="_blank">GitHub</a> </span>
+            </li>
+            <li>
+                <span class="info"><a href="https://raulpavani.itch.io/" target="_blank">Itch.io</a> </span>
+            </li>
+        </ul>
+    </section>
+
+    <section id="projetos">
+        <h2>Projects</h2>
+
+        <div class="project" onclick="toggleDetails('details-arvore')">
+            <div class="project-title">Árvore Games</div>
+            <div class="project-role">Unity | VR/AR | FMOD | Yarn Spinner</div>
+            <div class="project-details" id="details-arvore">
+                <p><strong>Project:</strong> Immersive experiences in virtual reality.</p>
+                <iframe src="https://arvore.io/"></iframe>
+            </div>
+        </div>
+
+        <div class="project" onclick="toggleDetails('details-hydra')">
+            <div class="project-title">Hydra Games</div>
+            <div class="project-role">Unity | Gambling | Spine 2D</div>
+            <div class="project-details" id="details-hydra">
+                <p><strong>Project:</strong> Games focused on performance and monetization.</p>
+                <iframe src="https://www.hydragames.com.br"></iframe>
+            </div>
+        </div>
+
+        <div class="project" onclick="toggleDetails('details-ilex')">
+            <div class="project-title">Ilex Games</div>
+            <div class="project-role">Unity | PC/Consoles | FMOD | Yarn Spinner</div>
+            <div class="project-details" id="details-ilex">
+                <p><strong>Project:</strong> Development and publishing of independent games.</p>
+                <iframe src="https://ilexgames.com.br/main"></iframe>
+            </div>
+        </div>
+
+        <div class="project" onclick="toggleDetails('details-isgame')">
+            <div class="project-title">ISGAME</div>
+            <div class="project-role">Unity | Android/iOS | Firebase</div>
+            <div class="project-details" id="details-isgame">
+                <p><strong>Project:</strong> Game for cognitive training aimed at the elderly.</p>
+                <iframe src="https://isgame.com.br"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
+    <script src="script.js"></script>
+
+    <div style="position: fixed; top: 20px; right: 20px; z-index: 10000;">
+        <a href="index.html" style="margin-right: 10px; text-decoration: none; color: #fbffff;">🇧🇷 PT-BR</a>
+        <a href="index-en.html" style="text-decoration: none; color: #fbffff;">🇺🇸 EN</a>
+    </div>
+
+</body>
+
+</html>
