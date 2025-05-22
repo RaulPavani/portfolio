@@ -5,203 +5,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portfólio - Raul Pavani</title>
-  <link href="https://fonts.googleapis.com/css?family=Cabin+Sketch" rel="stylesheet">
-  <style>
-    html,
-    body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      overflow-x: hidden;
-    }
-
-    body {
-      text-shadow: 1px 1px #FF00FF;
-      font-family: 'Cabin Sketch', monospace;
-      background-color: black;
-      animation: colorloop 5s infinite;
-    }
-
-    a {
-      font-size: 25px;
-      color: #ffffff;
-      text-decoration: none;
-    }
-
-    header {
-      text-align: center;
-      padding: 40px;
-      background-color: #000;
-    }
-
-    header h1,
-    header p {
-      color: #FF99FF;
-      text-shadow: 2px 2px #000;
-    }
-
-    nav {
-      text-align: center;
-      padding: 15px;
-      background: #000;
-      animation: colorloop_blck 2s infinite;
-    }
-
-    nav a {
-      margin: 0 20px;
-    }
-
-    section {
-      padding: 30px;
-      max-width: 900px;
-      margin: 60px auto;
-      background-color: black;
-      outline: 5px solid #0000AE;
-      box-shadow: 0px 0px 30px black;
-      border: 5px solid white;
-      font-size: 20px;
-      color: white;
-      transform: rotate(var(--section-angle, 0deg));
-    }
-
-    #curriculo {
-      --section-angle: -1.2deg;
-    }
-
-    #projetos {
-      --section-angle: 1.3deg;
-    }
-
-    h2 {
-      border-bottom: 2px dashed white;
-      padding-bottom: 10px;
-      display: inline-block;
-      transform: rotate(var(--angle, 0deg));
-    }
-
-    section h2:nth-of-type(1) {
-      --angle: -2deg;
-    }
-
-    section h2:nth-of-type(2) {
-      --angle: 1.5deg;
-    }
-
-    section h2:nth-of-type(3) {
-      --angle: -1deg;
-    }
-
-    section h2:nth-of-type(4) {
-      --angle: 2deg;
-    }
-
-    section#projetos h2 {
-      --angle: -1.5deg;
-    }
-
-    .project {
-      background-color: black;
-      border: 2px solid #FF00FF;
-      margin-bottom: 15px;
-      padding: 15px;
-      cursor: pointer;
-      transition: transform 0.2s;
-    }
-
-    .project:hover {
-      transform: scale(1.02);
-    }
-
-    .project-details {
-      display: none;
-      margin-top: 10px;
-      padding: 10px;
-      background-color: #111;
-      border: 1px dashed #FF99FF;
-    }
-
-    .project-details iframe {
-      width: 100%;
-      height: 315px;
-      margin-top: 10px;
-      border: none;
-    }
-
-    footer {
-      text-align: center;
-      background-color: black;
-      color: white;
-      padding: 20px;
-    }
-
-    canvas {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      z-index: -1;
-      pointer-events: none;
-    }
-
-    @keyframes colorloop {
-      0% {
-        background-color: #FF00FF;
-      }
-
-      20% {
-        background-color: #FF99FF;
-      }
-
-      40% {
-        background-color: #CC00FF;
-      }
-
-      60% {
-        background-color: #CC99FF;
-      }
-
-      80% {
-        background-color: #9900FF;
-      }
-
-      100% {
-        background-color: #FF00FF;
-      }
-    }
-
-    @keyframes colorloop_blck {
-      0% {
-        background-color: black;
-      }
-
-      50% {
-        background-color: #000066;
-      }
-
-      100% {
-        background-color: black;
-      }
-    }
-  </style>
-  <script>
-    function toggleDetails(id) {
-      const details = document.getElementById(id);
-      details.style.display = details.style.display === 'block' ? 'none' : 'block';
-    }
-  </script>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
   <header>
-    <h1>Raul Pavani</h1>
-    <p>Gameplay Developer | Docente | Pesquisador em Gamificação</p>
+    <h1><strong>Raul Pavani</strong></h1>
+    <p>Gameplay Developer | Unity | C# | Docente | Pesquisador em Gamificação</p>
   </header>
 
-  <nav>
+  <!-- <nav>
     <a href="#curriculo">Currículo</a>
     <a href="#projetos">Projetos</a>
-  </nav>
+  </nav> -->
 
   <section id="curriculo">
     <h2>Sobre Mim</h2>
@@ -210,30 +26,71 @@
       Digitais.</p>
 
     <h2>Experiência Profissional</h2>
-    <ul>
-      <li><strong>Árvore Games</strong> – Gameplay Developer | Unity | VR - 2025 - até o momento</li>
-      <li><strong>Faculdade de Americana</strong> – Professor de Graduação | Computação - 2024 - até o momento</li>
-      <li><strong>Hydra Games</strong> – Gameplay Developer | Unity | Gambling - 2022 - 2024</li>
-      <li><strong>Ilex Games</strong> – Desenvolvedor Unity | Unity - 2020 - 2022</li>
-      <li><strong>ISGAME</strong> – Desenvolvedor Unity | Unity | Mobile - 2020 - 2022</li>
-      <li><strong>IBM</strong> – Desenvolvedor SAP | ABAP - 2018 - 2020</li>
-      <li><strong>Happy Code</strong> – Instrutor Unity - 2016 - 2018</li>
+    <ul class="experiencia">
+      <li>
+        <span class="info"><strong>Árvore Games</strong> – Gameplay Developer | Unity | VR</span>
+        <span class="data">2025 - 20XX</span>
+      </li>
+      <li>
+        <span class="info"><strong>Faculdade de Americana</strong> – Professor de Graduação | Computação</span>
+        <span class="data">2024 - 20XX</span>
+      </li>
+      <li>
+        <span class="info"><strong>LEXP</strong> – Desenvolvedor Unity | Aplicações Educacionais</span>
+        <span class="data">2024 - 2024</span>
+      </li>
+      <li>
+        <span class="info"><strong>Hydra Games</strong> – Desenvolvedor Unity | Gambling</span>
+        <span class="data">2022 - 2024</span>
+      </li>
+      <li>
+        <span class="info"><strong>Ilex Games</strong> – Desenvolvedor Unity</span>
+        <span class="data">2020 - 2022</span>
+      </li>
+      <li>
+        <span class="info"><strong>ISGAME</strong> – Desenvolvedor Unity | Mobile</span>
+        <span class="data">2020 - 2022</span>
+      </li>
+      <li>
+        <span class="info"><strong>IBM</strong> – Desenvolvedor SAP | ABAP</span>
+        <span class="data">2018 - 2020</span>
+      </li>
+      <li>
+        <span class="info"><strong>Happy Code</strong> – Instrutor Unity</span>
+        <span class="data">2016 - 2018</span>
+      </li>
     </ul>
 
     <h2>Educação</h2>
-    <ul>
-      <li><strong>Mestrado</strong> – Mestrado em Tecnologia com enfase em Gamificação - Unicamp – em andamento</li>
-      <li><strong>Especialização </strong> – Inteligência Artificial e Aprendizado de Maquina – PUC - conclusão 2025
+    <ul class="educacao">
+      <li>
+        <span class="info"><strong>Mestrado</strong> – Tecnologia com enfase em Gamificação - Unicamp </span>
+        <span class="data">20XX</span>
       </li>
-      <li><strong>Especialização </strong> – Álgebra Linear e Geometria Analítica – Unyleya - conclusão 2022</li>
-      <li><strong>Graduação</strong> – Jogos Digitais – FATEC Americana - conclusão 2019</li>
+      <li>
+        <span class="info"><strong>Especialização</strong> – Inteligência Artificial e Aprendizado de Maquina – PUC
+        </span>
+        <span class="data">2025</span>
+      </li>
+      <li>
+        <span class="info"><strong>Especialização</strong> – Álgebra Linear e Geometria Analítica – Unyleya </span>
+        <span class="data">2022</span>
+      </li>
+      <li>
+        <span class="info"><strong>Graduação</strong> – Jogos Digitais – FATEC Americana </span>
+        <span class="data">2019</span>
+      </li>
     </ul>
 
     <h2>Links</h2>
-    <p>
-      <a href="https://www.linkedin.com/in/raul-pavani/" target="_blank">LinkedIn</a> |
-      <a href="https://raulpavani.itch.io/" target="_blank">Itch.io</a>
-    </p>
+    <ul class="links">
+      <li>
+        <span class="info"><a href="https://www.linkedin.com/in/raul-pavani/" target="_blank">LinkedIn</a> </span>
+      </li>
+      <li>
+        <span class="info"><a href="https://raulpavani.itch.io/" target="_blank">Itch.io</a> </span>
+      </li>
+    </ul>
   </section>
 
   <section id="projetos">
@@ -241,7 +98,7 @@
 
     <div class="project" onclick="toggleDetails('details-arvore')">
       <div class="project-title">Árvore Games</div>
-      <div class="project-role">Desenvolvedor VR | Projeto em fase de publicação</div>
+      <div class="project-role">Unity | VR/AR | FMOD | Yarn Spinner</div>
       <div class="project-details" id="details-arvore">
         <p><strong>Projeto:</strong> Experiências imersivas em realidade virtual.</p>
         <iframe src="https://arvore.io/"></iframe>
@@ -250,7 +107,7 @@
 
     <div class="project" onclick="toggleDetails('details-hydra')">
       <div class="project-title">Hydra Games</div>
-      <div class="project-role">Desenvolvedor | Projetos de gambling, foco em desenvolvimento e metodologias</div>
+      <div class="project-role">Unity | Gambling | Spine 2D</div>
       <div class="project-details" id="details-hydra">
         <p><strong>Projeto:</strong> Jogos com foco em performance e monetização.</p>
         <iframe src="https://www.hydragames.com.br"></iframe>
@@ -259,16 +116,16 @@
 
     <div class="project" onclick="toggleDetails('details-ilex')">
       <div class="project-title">Ilex Games</div>
-      <div class="project-role">Gameplay Programmer | Jogos indie para Steam</div>
+      <div class="project-role">Unity | PC/Consoles | FMOD | Yarn Spinner</div>
       <div class="project-details" id="details-ilex">
-        <p><strong>Projeto:</strong> Desenvolvimento completo e publicação de jogos independentes.</p>
+        <p><strong>Projeto:</strong> Desenvolvimento e publicação de jogos independentes.</p>
         <iframe src="https://ilexgames.com.br/main"></iframe>
       </div>
     </div>
 
     <div class="project" onclick="toggleDetails('details-isgame')">
       <div class="project-title">ISGAME</div>
-      <div class="project-role">Desenvolvedor | Jogo como serviço para mobile, foco em habilidades cognitivas</div>
+      <div class="project-role">Unity | Android/iOS | Firebase</div>
       <div class="project-details" id="details-isgame">
         <p><strong>Projeto:</strong> Jogo para treino cognitivo voltado à terceira idade.</p>
         <iframe src="https://isgame.com.br"></iframe>
@@ -276,93 +133,9 @@
     </div>
   </section>
 
-  <footer>
-    <p>© 2025 Raul Pavani - Todos os direitos reservados.</p>
-  </footer>
-
   <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
-  <script>
-    const { Engine, Render, Runner, Bodies, Composite, Body } = Matter;
+  <script src="script.js"></script>
 
-    const engine = Engine.create();
-    const world = engine.world;
-
-    const render = Render.create({
-      element: document.body,
-      engine: engine,
-      options: {
-        width: window.innerWidth,
-        height: window.innerHeight,
-        wireframes: false,
-        background: 'transparent'
-      }
-    });
-
-    Render.run(render);
-    const runner = Runner.create();
-    Runner.run(runner, engine);
-
-    const width = window.innerWidth;
-    const height = window.innerHeight;
-
-    const chao = Bodies.rectangle(width / 2, height + 50, width * 2, 100, { isStatic: true });
-    const teto = Bodies.rectangle(width / 2, -50, width * 2, 100, { isStatic: true });
-    const paredeEsquerda = Bodies.rectangle(-50, height / 2, 100, height * 2, { isStatic: true });
-    const paredeDireita = Bodies.rectangle(width + 50, height / 2, 100, height * 2, { isStatic: true });
-
-    Composite.add(world, [chao, teto, paredeEsquerda, paredeDireita]);
-
-    const cubos = [];
-    const numCubos = 100;
-
-    for (let i = 0; i < numCubos; i++) {
-      const size = 30 + Math.random() * 50;
-      const x = Math.random() * width;
-      const y = Math.random() * height; 
-
-      const cubo = Bodies.rectangle(
-        x,
-        y,
-        size,
-        size,
-        {
-          restitution: 0.7,
-          friction: 0.1,
-          density: 0.002,
-          render: {
-            fillStyle: `rgba(${Math.floor(Math.random() * 255)}, 0, 255, 0.5)`
-          }
-        }
-      );
-
-      cubos.push(cubo);
-      Composite.add(world, cubo);
-    }
-
-    let lastScroll = 0;
-    window.addEventListener('scroll', () => {
-      const scrollDelta = window.scrollY - lastScroll;
-      lastScroll = window.scrollY;
-
-      if (scrollDelta > 0) {
-        cubos.forEach(cubo => {
-          Body.applyForce(cubo, cubo.position, { x: 0, y: -scrollDelta * 0.5 });
-          Body.setAngularVelocity(cubo, cubo.angularVelocity + scrollDelta * 0.02);
-        });
-      }
-    });
-
-    window.addEventListener('wheel', (event) => {
-      const scrollDelta = event.deltaY;
-
-      if (scrollDelta > 0) {
-        cubos.forEach(cubo => {
-          Body.applyForce(cubo, cubo.position, { x: 0, y: -scrollDelta * 0.002 });
-          Body.setAngularVelocity(cubo, cubo.angularVelocity + scrollDelta * 0.001);
-        });
-      }
-    });
-  </script>
 </body>
 
 </html>

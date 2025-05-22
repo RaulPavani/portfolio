@@ -1,0 +1,151 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: monospace;
+  background-color: black;
+}
+
+a {
+  font-size: 25px;
+  color: #fdffff;
+  text-decoration: none;
+}
+
+header {
+  max-width: 920px;
+  margin: 30px auto;
+  padding: 20px;
+  font-family: monospace;
+  background-color: black;
+  border: 5px solid #fdffff;
+  outline: 5px solid #0827f5;
+  box-shadow: 0px 0px 30px black;
+
+  --section-angle: 1.3deg;
+  transform: rotate(var(--section-angle, 0deg));
+  transform-origin: left center;
+}
+
+header h1 {
+  color: #fdffff;
+  border-bottom: 2px dashed #fdffff;
+  padding-bottom: 10px;
+}
+
+header p {
+  color: #fdffff;
+  font-size: 18px;
+}
+
+section {
+  padding: 30px;
+  max-width: 900px;
+  margin: 60px auto;
+  background-color: black;
+  outline: 5px solid #0827f5;
+  box-shadow: 0px 0px 30px black;
+  border: 5px solid #fdffff;
+  font-size: 18px;
+  color: #fdffff;
+  transform: rotate(var(--section-angle, 0deg));
+}
+
+#curriculo {
+  --section-angle: -1.2deg;
+}
+
+#projetos {
+  --section-angle: 1.3deg;
+}
+
+h2 {
+  border-bottom: 2px dashed #fdffff;
+  padding-bottom: 10px;
+  display: inline-block;
+  transform: rotate(var(--angle, 0deg));
+}
+
+section h2:nth-of-type(1) {
+  --angle: -2deg;
+}
+
+section h2:nth-of-type(2) {
+  --angle: 1.5deg;
+}
+
+section h2:nth-of-type(3) {
+  --angle: -1deg;
+}
+
+section h2:nth-of-type(4) {
+  --angle: 2deg;
+}
+
+section#projetos h2 {
+  --angle: -1.5deg;
+}
+
+.experiencia li,
+.educacao li,
+.links li {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 5px;
+}
+
+.experiencia .info,
+.educacao .info,
+.links .info {
+  flex: 1;
+}
+
+.experiencia .data,
+.educacao .data {
+  width: 150px;
+  text-align: right;
+}
+
+.project {
+  background-color: black;
+  border: 2px solid #0827f5;
+  margin-bottom: 15px;
+  padding: 15px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.project:hover {
+  transform: scale(1.02);
+}
+
+.project-details {
+  display: none;
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #000;
+  border: 1px dashed #ff0081;
+}
+
+.project-details iframe {
+  width: 100%;
+  height: 315px;
+  margin-top: 10px;
+  border: none;
+}
+
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  pointer-events: none;
+}
