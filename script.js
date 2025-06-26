@@ -60,29 +60,53 @@ for (let i = 0; i < numCubes; i++) {
   Composite.add(world, newCube);
 }
 
-let lastScroll = 0;
+let lastScroll = window.scrollY;
+let lastTouchY = null;
 
+// Scroll por mouse ou barra lateral
 window.addEventListener('scroll', () => {
-  const scrollDelta = window.scrollY - lastScroll;
-  lastScroll = window.scrollY;
+  const currentScroll = window.scrollY;
+  const scrollDelta = currentScroll - lastScroll;
 
-  if (scrollDelta > 0) {
+  if (scrollDelta !== 0) {
+    const direction = scrollDelta > 0 ? -1 : 1;
+
     cubes.forEach(cubo => {
-      Body.applyForce(cubo, cubo.position, { x: 0, y: -scrollDelta * 0.5 });
-      Body.setAngularVelocity(cubo, cubo.angularVelocity + scrollDelta * 0.02);
+      Body.applyForce(cubo, cubo.position, { x: 0, y: direction * Math.abs(scrollDelta) * 0.5 });
+      Body.setAngularVelocity(cubo, cubo.angularVelocity + direction * Math.abs(scrollDelta) * 0.02);
     });
+  }
+
+  lastScroll = currentScroll;
+});
+
+// Suporte a toque (touch)
+window.addEventListener('touchstart', (e) => {
+  if (e.touches.length === 1) {
+    lastTouchY = e.touches[0].clientY;
   }
 });
 
-window.addEventListener('wheel', (event) => {
-  const scrollDelta = event.deltaY;
+window.addEventListener('touchmove', (e) => {
+  if (e.touches.length === 1 && lastTouchY !== null) {
+    const currentTouchY = e.touches[0].clientY;
+    const deltaY = lastTouchY - currentTouchY;
 
-  if (scrollDelta > 0) {
-    cubes.forEach(cubo => {
-      Body.applyForce(cubo, cubo.position, { x: 0, y: -scrollDelta * 0.002 });
-      Body.setAngularVelocity(cubo, cubo.angularVelocity + scrollDelta * 0.001);
-    });
+    if (deltaY !== 0) {
+      const direction = deltaY > 0 ? -1 : 1;
+
+      cubes.forEach(cubo => {
+        Body.applyForce(cubo, cubo.position, { x: 0, y: direction * Math.abs(deltaY) * 0.5 });
+        Body.setAngularVelocity(cubo, cubo.angularVelocity + direction * Math.abs(deltaY) * 0.02);
+      });
+    }
+
+    lastTouchY = currentTouchY;
   }
+});
+
+window.addEventListener('touchend', () => {
+  lastTouchY = null;
 });
 
 window.addEventListener('click', (event) => {
