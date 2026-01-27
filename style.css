@@ -149,3 +149,80 @@ canvas {
   z-index: -1;
   pointer-events: none;
 }
+
+.project-trailer-card {
+  margin-top: 12px;
+  max-width: 360px;
+}
+
+.trailer-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.trailer-title {
+  margin-bottom: 0px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #eee;
+}
+
+.trailer-thumb {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #000;
+}
+
+.trailer-thumb img {
+  width: 100%;
+  display: block;
+}
+
+.play-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 48px;
+  color: white;
+  background: rgba(0, 0, 0, 0.35);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.trailer-link:hover .play-overlay {
+  opacity: 1;
+}
+
+.project-image-card {
+  margin-top: 12px;
+  max-width: 360px;
+}
+
+.image-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.image-title {
+  margin-bottom: 6px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #eee;
+}
+
+.image-thumb {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #000;
+}
+
+.image-thumb img {
+  width: 100%;
+  display: block;
+}

@@ -14,21 +14,12 @@
     <p>Gameplay Developer | Unity | C# | Docente | Pesquisador em Gamificação</p>
   </header>
 
-  <!-- <nav>
-    <a href="#curriculo">Currículo</a>
-    <a href="#projetos">Projetos</a>
-  </nav> -->
-
   <section id="curriculo">
     <h2>Sobre Mim</h2>
-    <p>Desenvolvedor de jogos com foco em Unity e experiência em programação de gameplay para diversas plataformas.<br>
-      Ao longo da minha carreira, desenvolvi desde simuladores até jogos indies, utilizando Unity e outras engines para
-      criar experiências interativas e imersivas. Além disso, tenho experiência como professor universitário, lecionando
-      disciplinas de desenvolvimento de jogos e ciências da computação.
-      Atualmente, além de desenvolvedor e professor, também sou mestrando e estou pesquisando o impacto da gamificação
-      em diferentes tipos de personalidade, buscando entender como elementos de jogo podem ser adaptados para maximizar
-      engajamento e aprendizado.</p>
-
+    <p>Desenvolvedor de jogos com foco em Unity e gameplay, com experiência no projeto e implementação de sistemas interativos, arquiteturas modulares e pipelines de conteúdo para jogos e aplicações imersivas.
+    <br>Atuação em integração de áudio dinâmico, serviços em nuvem, fluxos narrativos e automação de builds, com ênfase em performance, estabilidade e escalabilidade. 
+    <br>Experiência em desenvolvimento para mobile, desktop, plataformas dedicadas e ambientes VR/AR.
+    <br>Mestrando em Tecnologia com ênfase em Gamificação, com pesquisa direcionada à personalização de experiências interativas a partir de traços de personalidade, visando maximizar engajamento e eficácia em contextos educacionais</p>
     <h2>Experiência Profissional</h2>
     <ul class="experiencia">
       <li>
@@ -72,8 +63,7 @@
         <span class="data">20XX</span>
       </li>
       <li>
-        <span class="info"><strong>Especialização</strong> – Inteligência Artificial e Aprendizado de Maquina – PUC
-        </span>
+        <span class="info"><strong>Especialização</strong> – Inteligência Artificial e Aprendizado de Maquina – PUC</span>
         <span class="data">2025</span>
       </li>
       <li>
@@ -88,72 +78,182 @@
 
     <h2>Links</h2>
     <ul class="links">
-      <li>
-        <span class="info"><a href="https://www.linkedin.com/in/raul-pavani/" target="_blank">LinkedIn</a> </span>
-      </li>
-      <li>
-        <span class="info"><a href="https://github.com/RaulPavani/" target="_blank">GitHub</a> </span>
-      </li>
-      <li>
-        <span class="info"><a href="https://raulpavani.itch.io/" target="_blank">Itch.io</a> </span>
-      </li>
-      <li>
-        <span class="info"><a href="http://lattes.cnpq.br/6178106221976246" target="_blank">Lattes</a> </span>
-      </li>
+      <li><span class="info"><a href="https://www.linkedin.com/in/raul-pavani/" target="_blank">LinkedIn</a></span></li>
+      <li><span class="info"><a href="https://github.com/RaulPavani/" target="_blank">GitHub</a></span></li>
+      <li><span class="info"><a href="https://raulpavani.itch.io/" target="_blank">Itch.io</a></span></li>
+      <li><span class="info"><a href="http://lattes.cnpq.br/6178106221976246" target="_blank">Lattes</a></span></li>
     </ul>
   </section>
 
   <section id="projetos">
     <h2>Projetos</h2>
 
+    <!-- Árvore Games -->
     <div class="project" onclick="toggleDetails('details-arvore')">
       <div class="project-title">Árvore Games</div>
       <div class="project-role">Unity | VR/AR | FMOD | Yarn Spinner</div>
+
       <div class="project-details" id="details-arvore">
-        <p><strong>Projeto:</strong> Experiências imersivas em realidade virtual.</p>
-        <iframe src="https://arvore.io"></iframe>
+        <div class="project-text">
+          <p>
+            Desenvolvimento de sistemas de gameplay e interação para experiências VR/AR em Unity, com integração de áudio
+            dinâmico via FMOD e fluxos narrativos com Yarn Spinner. Atuação na criação de componentes reutilizáveis,
+            pipelines de conteúdo e soluções para performance, estabilidade e escalabilidade em ambientes imersivos.
+          </p>
+
+          <ul class="project-bullets">
+            <li>Desenvolvimento de sistemas interativos de gameplay em Unity para ambientes VR/AR</li>
+            <li>Integração de áudio com FMOD, incluindo eventos, parâmetros e controle dinâmico de mixagem em runtime</li>
+            <li>Implementação de fluxos narrativos e pipelines de conteúdo utilizando Yarn Spinner</li>
+            <li>Criação de componentes reutilizáveis e ferramentas internas para acelerar a produção de novas experiências</li>
+            <li>Resolução de problemas de performance, sincronização de estados e estabilidade em cenas imersivas</li>
+          </ul>
+
+          <div class="project-links">
+            <div class="project-trailer-card">
+              <a href="https://www.youtube.com/watch?v=5d0KKcEiG8I" target="_blank" rel="noopener" class="trailer-link">
+                <div class="trailer-title">The Boys VR</div>
+
+                <div class="trailer-thumb">
+                  <img src="https://img.youtube.com/vi/5d0KKcEiG8I/hqdefault.jpg" alt="Trailer do projeto" loading="lazy" />
+                  <div class="play-overlay">▶</div>
+                </div>
+              </a>
+            </div>
+          </div>
+
+        </div>
       </div>
     </div>
 
+    <!-- Hydra Games -->
     <div class="project" onclick="toggleDetails('details-hydra')">
       <div class="project-title">Hydra Games</div>
-      <div class="project-role">Unity | Gambling | Spine 2D</div>
+      <div class="project-role">Unity | Plataformas dedicadas | Spine 2D | CI/CD</div>
+
       <div class="project-details" id="details-hydra">
-        <p><strong>Projeto:</strong> Jogos com foco em performance e monetização.</p>
-        <iframe src="https://www.hydragames.com.br"></iframe>
+        <div class="project-text">
+          <p>
+            Desenvolvimento de jogos em Unity para plataformas dedicadas, com foco em performance, responsividade de input,
+            game feel e integração com hardware específico. Atuação na implementação de sistemas centrais de gameplay,
+            pipelines de conteúdo e automação de build e deploy.
+          </p>
+
+          <ul class="project-bullets">
+            <li>Implementação de sistemas de gameplay e features centrais em Unity</li>
+            <li>Integração com hardware dedicado, incluindo mapeamento e leitura de inputs físicos do gabinete</li>
+            <li>Implementação e validação de lógica determinística para distribuição de resultados</li>
+            <li>Otimização de performance e responsividade para execução em hardware específico</li>
+            <li>Ajustes de game feel e feedback visual/sonoro para melhorar a experiência do usuário</li>
+            <li>Suporte e evolução de pipelines de conteúdo</li>
+            <li>Implementação e manutenção de pipelines de CI/CD para automação de builds e deploy</li>
+          </ul>
+
+          <div class="project-links">
+            
+          </div>
+
+        </div>
       </div>
     </div>
 
+    <!-- Ilex Games -->
     <div class="project" onclick="toggleDetails('details-ilex')">
       <div class="project-title">Ilex Games</div>
       <div class="project-role">Unity | PC/Consoles | FMOD | Yarn Spinner</div>
+
       <div class="project-details" id="details-ilex">
-        <p><strong>Projeto:</strong> Desenvolvimento e publicação de jogos independentes.</p>
-        <iframe src="https://ilexgames.com.br/main"></iframe>
+        <div class="project-text">
+          <p>
+            Desenvolvimento e manutenção de sistemas de gameplay para jogos independentes em Unity, com integração de áudio
+            via FMOD e suporte a pipelines narrativos com Yarn Spinner. Atuação na correção de bugs, melhoria de ferramentas
+            internas e otimizações para estabilidade e escalabilidade de conteúdo.
+          </p>
+
+          <ul class="project-bullets">
+            <li>Implementação e manutenção de features de gameplay e sistemas de progressão</li>
+            <li>Integração e troubleshooting de áudio com FMOD (eventos, parâmetros, mix e roteamento)</li>
+            <li>Implementação de fluxos narrativos com Yarn Spinner para suportar iteração rápida de conteúdo</li>
+            <li>Correção de bugs e melhorias de estabilidade em cenários complexos (cenas, estados e persistência)</li>
+            <li>Criação/ajuste de ferramentas internas para acelerar produção e reduzir retrabalho</li>
+          </ul>
+
+          <div class="project-links">
+            <div class="project-trailer-card">
+              <a href="https://www.youtube.com/watch?v=Z2x_noiDCSE" target="_blank" rel="noopener" class="trailer-link">
+                <div class="trailer-title">Adventure of Samsara</div>
+
+                <div class="trailer-thumb">
+                  <img src="https://img.youtube.com/vi/Z2x_noiDCSE/hqdefault.jpg" alt="Adventure of Samsara Trailer" loading="lazy" />
+                  <div class="play-overlay">▶</div>
+                </div>
+              </a>
+            </div>
+            <div class="project-trailer-card">
+              <a href="https://www.youtube.com/watch?v=H6qSs_xCPWU" target="_blank" rel="noopener" class="trailer-link">
+                <div class="trailer-title">Soul Gambler</div>
+
+                <div class="trailer-thumb">
+                  <img src="https://img.youtube.com/vi/H6qSs_xCPWU/hqdefault.jpg" alt="Soul Gambler" loading="lazy" />
+                  <div class="play-overlay">▶</div>
+                </div>
+              </a>
+            </div>
+          </div>
+
+        </div>
       </div>
     </div>
 
+    <!-- ISGAME -->
     <div class="project" onclick="toggleDetails('details-isgame')">
       <div class="project-title">ISGAME</div>
       <div class="project-role">Unity | Android/iOS | Firebase</div>
+
       <div class="project-details" id="details-isgame">
-        <p><strong>Projeto:</strong> Jogo para treino cognitivo voltado à terceira idade.</p>
-        <iframe src="https://isgame.com.br"></iframe>
+        <div class="project-text">
+          <p>
+            Desenvolvimento de aplicação/jogo mobile em Unity com foco em experiência do usuário e estabilidade, incluindo
+            integração com serviços em nuvem para persistência e telemetria. Atuação em fluxos de dados, otimização para
+            dispositivos variados e suporte a métricas de uso.
+          </p>
+
+          <ul class="project-bullets">
+            <li>Desenvolvimento de gameplay e UX em Unity para Android/iOS</li>
+            <li>Integração com Firebase para persistência, coleta de dados e telemetria</li>
+            <li>Implementação de fluxos de onboarding e navegação para reduzir fricção de uso</li>
+            <li>Otimizações de performance e estabilidade para diferentes faixas de hardware mobile</li>
+            <li>Correção de bugs e melhorias de robustez em armazenamento e sincronização de dados</li>
+          </ul>
+
+          <div class="project-links">
+            <div class="project-trailer-card">
+              <a href="https://www.youtube.com/watch?v=OeU0UnG4XfY" target="_blank" rel="noopener" class="trailer-link">
+                <div class="trailer-title">Cérebro Ativo</div>
+
+                <div class="trailer-thumb">
+                  <img src="https://img.youtube.com/vi/OeU0UnG4XfY/hqdefault.jpg" alt="Cérebro Ativo" loading="lazy" />
+                  <div class="play-overlay">▶</div>
+                </div>
+              </a>
+            </div>
+            </div>
+          </div>
+
+        </div>
       </div>
     </div>
+
   </section>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
   <script src="script.js"></script>
 
   <div style="position: fixed; top: 20px; right: 20px; z-index: 10000;">
-        <a href="index.html" style="margin-right: 10px; text-decoration: none; color: #fbffff;">🇧🇷</a>
-        <a href="index-en.html" style="text-decoration: none; color: #fbffff;">🇺🇸</a>
-
+    <a href="index.html" style="margin-right: 10px; text-decoration: none; color: #fbffff;">🇧🇷</a>
+    <a href="index-en.html" style="text-decoration: none; color: #fbffff;">🇺🇸</a>
   </div>
 
 </body>
 
-
 </html>
-
