@@ -6,14 +6,15 @@
     <title>Portfolio</title>
     <style>
       html, body { margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; background: #000; }
-      #unity-canvas { width: 100%; height: 100%; display: block; background: #000; }
+      /* touch-action: none impede o navegador de rolar/dar zoom enquanto o dedo arrasta um produto. */
+      #unity-canvas { width: 100%; height: 100%; display: block; background: #000; touch-action: none; }
       #carregando { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
                     color: #ccc; font-family: sans-serif; font-size: 18px; pointer-events: none; }
     </style>
   </head>
   <body>
     <canvas id="unity-canvas" tabindex="-1"></canvas>
-    <div id="carregando">Carregando…</div>
+    <div id="carregando">Loading...</div>
     <script>
       var buildUrl = "Build";
       var config = {
@@ -31,16 +32,16 @@
       script.src = buildUrl + "/WebGL.loader.js";
       script.onload = function () {
         createUnityInstance(document.querySelector("#unity-canvas"), config, function (progresso) {
-          carregando.textContent = "Carregando… " + Math.round(progresso * 100) + "%";
+          carregando.textContent = "Loading... " + Math.round(progresso * 100) + "%";
         }).then(function () {
           carregando.remove();
         }).catch(function (mensagem) {
           carregando.textContent = mensagem;
         });
       };
-      // Sem isto, um loader 404 (index.html de outra build) deixa "Carregando…" para sempre.
+      // Sem isto, um loader 404 (index.html de outra build) deixa "Loading..." para sempre.
       script.onerror = function () {
-        carregando.textContent = "Não achei " + script.src + ". O index.html é de outra build?";
+        carregando.textContent = "Could not load " + script.src + ". Is index.html from another build?";
       };
       document.body.appendChild(script);
     </script>
