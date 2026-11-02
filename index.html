@@ -18,17 +18,17 @@
       var buildUrl = "Build";
       var config = {
         arguments: [],
-        dataUrl: buildUrl + "/Build.data.unityweb",
-        frameworkUrl: buildUrl + "/Build.framework.js.unityweb",
-        codeUrl: buildUrl + "/Build.wasm.unityweb",
+        dataUrl: buildUrl + "/WebGL.data.unityweb",
+        frameworkUrl: buildUrl + "/WebGL.framework.js.unityweb",
+        codeUrl: buildUrl + "/WebGL.wasm.unityweb",
         streamingAssetsUrl: "StreamingAssets",
-        companyName: "DefaultCompany",
+        companyName: "RaulPavani",
         productName: "Portfolio",
         productVersion: "1.0",
       };
       var carregando = document.querySelector("#carregando");
       var script = document.createElement("script");
-      script.src = buildUrl + "/Build.loader.js";
+      script.src = buildUrl + "/WebGL.loader.js";
       script.onload = function () {
         createUnityInstance(document.querySelector("#unity-canvas"), config, function (progresso) {
           carregando.textContent = "Carregando… " + Math.round(progresso * 100) + "%";
@@ -37,6 +37,10 @@
         }).catch(function (mensagem) {
           carregando.textContent = mensagem;
         });
+      };
+      // Sem isto, um loader 404 (index.html de outra build) deixa "Carregando…" para sempre.
+      script.onerror = function () {
+        carregando.textContent = "Não achei " + script.src + ". O index.html é de outra build?";
       };
       document.body.appendChild(script);
     </script>
